@@ -1,0 +1,29 @@
+enum Region {
+  US
+  EU
+}
+
+type Media {
+  character_image_url: String!
+}
+
+type CharacterInformation {
+  name: String!
+  gender: String!
+  faction: String
+  media: Media!
+  race: String!
+  character_image_url: String!
+  character_class: String!
+  specialization: String
+  guild: String
+  level: String!
+  item_level: String!
+  achievement_points: String!
+  covenant: String
+  covenant_renown: String
+}
+
+type Query {
+  getCharacterInfo(region: Region!, realm: String!, character_name: String!) : CharacterInformation
+}
