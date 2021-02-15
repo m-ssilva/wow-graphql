@@ -27,7 +27,7 @@ const generateToken = async () => {
       })
       .catch(e => {
         console.log(`Erro ao solicitar token a API da Blizzard`, e)
-        throw new Error('AUTHENTICATION_ON_BLIZZARD_API_FAILED')
+        throw new ApolloError('AUTHENTICATION_ON_BLIZZARD_API_FAILED')
       })
   } else {
     console.log(`Reaproveitando o token armazenado em memória`, lastTokenRequest.token)
