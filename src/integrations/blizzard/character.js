@@ -19,15 +19,15 @@ const getCharacterInfo = async (region, realm, name) => {
     }
   })
     .then(({ data }) => {
-      console.log('Sucesso na integração com a API Blizzard')
+      console.log('Sucesso na integração com a API Blizzard - Character Profile')
       return data
     })
     .catch(({ response }) => {
-      console.log('Erro na integração com a API Blizzard')
+      console.log('Erro na integração com a API Blizzard - Character Profile')
       return response
     })
-  if (response.status && response.status === 404 || response.status === 403) throw new Error('CHARACTER_NOT_FOUND')
-  return [response]
+  if (response.status && response.status === 404 || response.status === 403) throw new ApolloError('CHARACTER_NOT_FOUND', 1, { params: { region, realm, name } })
+  return response
 }
 
 const getCharacterImage = async (region, realm, name) => {
@@ -45,21 +45,20 @@ const getCharacterImage = async (region, realm, name) => {
     }
   })
     .then(({ data }) => {
-      console.log('Sucesso na integração com a API Blizzard')
+      console.log('Sucesso na integração com a API Blizzard - Character Media')
       return data
     })
     .catch(({ response }) => {
-      console.log('Erro na integração com a API Blizzard')
+      console.log('Erro na integração com a API Blizzard - Character Media')
       return response
     })
   if (response.status && response.status === 404 || response.status === 403) throw new ApolloError('CHARACTER_MEDIA_NOT_FOUND', 2, { params: { region, realm, name } })
-  return [response]
+  return response
 }
 
-const characterInfoLoader = new DataLoader(([{ region, realm, character_name }]) => getCharacterInfo(region, realm, character_name))
+const characterInfoLoader = new DataLoader(async ([{ region, realm, character_name }]) => [getCharacterInfo(region, realm, character_name)], { batch: false })
 
-const characterImageLoader = new DataLoader(([{ region, realm, character_name }]) => getCharacterImage(region, realm, character_name))
-
+const characterImageLoader = new DataLoader(async ([{ region, realm, character_name }]) => [getCharacterImage(region, realm, character_name)], { batch: false })
 
 module.exports = {
   getCharacterInfo,
