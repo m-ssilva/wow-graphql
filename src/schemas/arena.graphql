@@ -1,0 +1,16 @@
+type Match {
+  played: Int!
+  won: Int!
+  lost: Int!
+  win_rate: String!
+}
+
+type Bracket {
+  type: String!
+  rating: Int!
+  match_statistics: Match!
+}
+
+type Arena {
+  bracket: [Bracket]!
+}
