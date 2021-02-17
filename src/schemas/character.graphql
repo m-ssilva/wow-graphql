@@ -3,15 +3,10 @@ enum Region {
   EU
 }
 
-type Media {
-  character_image_url: String!
-}
-
-type CharacterInformation {
+type Profile {
   name: String!
   gender: String!
   faction: String
-  media: Media
   race: String!
   character_class: String!
   specialization: String
@@ -21,6 +16,12 @@ type CharacterInformation {
   achievement_points: String!
   covenant: String
   covenant_renown: String
+}
+
+type CharacterInformation {
+  profile: Profile
+  media: Media
+  arena: Arena
 }
 
 type Query {
