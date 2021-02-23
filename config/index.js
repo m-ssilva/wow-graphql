@@ -5,5 +5,8 @@ module.exports = {
     PROTOCOL: 'https',
     URL: 'api.blizzard.com',
     AUTH_URL: 'https://us.battle.net/oauth/token'
+  },
+  RAIDER_IO: {
+    URL: 'https://raider.io/api/v1'
   }
 }

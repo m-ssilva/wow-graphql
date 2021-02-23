@@ -1,4 +1,4 @@
-const { blizzard } = require('../../integrations')
+const { blizzard, raiderIO: raiderIOIntegration } = require('../../integrations')
 const builders = require('../../builders')
 const _ = require('lodash')
 
@@ -90,8 +90,30 @@ const arena = async ctx => {
   }
 }
 
+const raiderIO = async ctx => {
+  const raiderIOProfile = await raiderIOIntegration.profile.profileLoader.load(ctx.Query)
+
+  const getMythicScore = () => raiderIOProfile.mythic_plus_scores_by_season[0].scores.all
+
+  const getBestRuns = () => {
+    if (raiderIOProfile)
+      return raiderIOProfile.mythic_plus_best_runs.map(run => ({
+        dungeon: run.dungeon,
+        mythic_level: run.mythic_level,
+        score: run.score,
+        url: run.url
+      }))
+  }
+
+  return {
+    highest_season_score: getMythicScore(),
+    best_runs: getBestRuns()
+  }
+}
+
 module.exports = {
   profile,
   media,
-  arena
+  arena,
+  raiderIO
 }

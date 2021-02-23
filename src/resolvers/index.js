@@ -1,8 +1,10 @@
 const GMR = require('@wiicamp/graphql-merge-resolvers')
 const character = require('./character')
+const guild = require('./guild')
 
 const mainResolver = GMR.merge([
-  character
+  character,
+  guild
 ])
 
 module.exports = mainResolver
