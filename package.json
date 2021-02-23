@@ -1,5 +1,5 @@
 {
-  "name": "graphql-apollo",
+  "name": "wow-graphql",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/m-ssilva/graphql-apollo.git"
+    "url": "git+https://github.com/m-ssilva/wow-graphql.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/m-ssilva/graphql-apollo/issues"
+    "url": "https://github.com/m-ssilva/wow-graphql/issues"
   },
-  "homepage": "https://github.com/m-ssilva/graphql-apollo#readme",
+  "homepage": "https://github.com/m-ssilva/wow-graphql#readme",
   "dependencies": {
     "@wiicamp/graphql-merge-resolvers": "^2.1.2",
     "apollo-datasource-rest": "^0.10.0",
