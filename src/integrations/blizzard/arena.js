@@ -2,10 +2,9 @@ const axios = require('axios')
 const { BLIZZARD } = require('../../../config')
 const { generateToken } = require('./auth')
 const DataLoader = require('dataloader')
-const { ApolloError } = require('apollo-server')
+const { ApolloError } = require('apollo-server-express')
 
 const getArenaRating = async (region, realm, name, bracket) => {
-  const token = await generateToken()
   const lowerCaseRegion = region.toLowerCase()
   const lowerCaseRealm = realm.toLowerCase().replace(/\_/g, '-') // replacing underscore to dash (https://github.com/graphql/graphql-js/issues/936)
   const lowerCaseName = name.toLowerCase()
@@ -13,9 +12,9 @@ const getArenaRating = async (region, realm, name, bracket) => {
     method: 'GET',
     url: `${BLIZZARD.PROTOCOL}://${lowerCaseRegion}.${BLIZZARD.URL}/profile/wow/character/${lowerCaseRealm}/${lowerCaseName}/pvp-bracket/${bracket}`,
     params: {
-      access_token: token,
+      access_token: await generateToken(),
       namespace: 'profile-us',
-      locale: 'en-us'
+      locale: 'en_us'
     }
   })
     .then(({ data }) => {

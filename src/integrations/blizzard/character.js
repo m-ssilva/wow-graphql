@@ -2,10 +2,11 @@ const axios = require('axios')
 const { BLIZZARD } = require('../../../config')
 const { generateToken } = require('./auth')
 const DataLoader = require('dataloader')
-const { ApolloError } = require('apollo-server')
+const { ApolloError } = require('apollo-server-express')
+
+const getToken = async () => generateToken()
 
 const getCharacterInfo = async (region, realm, name) => {
-  const token = await generateToken()
   const lowerCaseRegion = region.toLowerCase()
   const lowerCaseRealm = realm.toLowerCase().replace(/\_/g, '-') // replacing underscore to dash (https://github.com/graphql/graphql-js/issues/936)
   const lowerCaseName = name.toLowerCase()
@@ -13,7 +14,7 @@ const getCharacterInfo = async (region, realm, name) => {
     method: 'GET',
     url: `${BLIZZARD.PROTOCOL}://${lowerCaseRegion}.${BLIZZARD.URL}/profile/wow/character/${lowerCaseRealm}/${lowerCaseName}`,
     params: {
-      access_token: token,
+      access_token: await getToken(),
       namespace: 'profile-us',
       locale: 'en_us'
     }
@@ -31,7 +32,6 @@ const getCharacterInfo = async (region, realm, name) => {
 }
 
 const getCharacterImage = async (region, realm, name) => {
-  const token = await generateToken()
   const lowerCaseRegion = region.toLowerCase()
   const lowerCaseRealm = realm.toLowerCase().replace(/\_/g, '-') // replacing underscore to dash (https://github.com/graphql/graphql-js/issues/936)
   const lowerCaseName = name.toLowerCase()
@@ -39,7 +39,7 @@ const getCharacterImage = async (region, realm, name) => {
     method: 'GET',
     url: `${BLIZZARD.PROTOCOL}://${lowerCaseRegion}.${BLIZZARD.URL}/profile/wow/character/${lowerCaseRealm}/${lowerCaseName}/character-media`,
     params: {
-      access_token: token,
+      access_token: await getToken(),
       namespace: 'profile-us',
       locale: 'en_us'
     }
@@ -61,8 +61,6 @@ const characterInfoLoader = new DataLoader(async ([{ region, realm, character_na
 const characterImageLoader = new DataLoader(async ([{ region, realm, character_name }]) => [getCharacterImage(region, realm, character_name)], { batch: false })
 
 module.exports = {
-  getCharacterInfo,
-  getCharacterImage,
   characterInfoLoader,
   characterImageLoader
 }
