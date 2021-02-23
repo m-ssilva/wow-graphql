@@ -1,0 +1,129 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe?namespace=profile-us"
+    }
+  },
+  "id": 178631206,
+  "name": "JohnDoe",
+  "gender": {
+    "type": "MALE",
+    "name": "Male"
+  },
+  "faction": {
+    "type": "HORDE",
+    "name": "Horde"
+  },
+  "race": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/playable-race/10?namespace=static-9.0.2_36532-us"
+    },
+    "name": "Blood Elf",
+    "id": 10
+  },
+  "character_class": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/playable-class/2?namespace=static-9.0.2_36532-us"
+    },
+    "name": "Paladin",
+    "id": 2
+  },
+  "active_spec": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/playable-specialization/65?namespace=static-9.0.2_36532-us"
+    },
+    "name": "Holy",
+    "id": 65
+  },
+  "realm": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/realm/3209?namespace=dynamic-us"
+    },
+    "name": "Azralon",
+    "id": 3209,
+    "slug": "azralon"
+  },
+  "guild": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/guild/azralon/bar-do-bill?namespace=profile-us"
+    },
+    "name": "A random guild",
+    "id": 62203423,
+    "realm": {
+      "key": {
+        "href": "https://us.api.blizzard.com/data/wow/realm/3209?namespace=dynamic-us"
+      },
+      "name": "Azralon",
+      "id": 3209,
+      "slug": "azralon"
+    },
+    "faction": {
+      "type": "HORDE",
+      "name": "Horde"
+    }
+  },
+  "level": 60,
+  "experience": 0,
+  "achievement_points": 13100,
+  "achievements": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/achievements?namespace=profile-us"
+  },
+  "titles": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/titles?namespace=profile-us"
+  },
+  "pvp_summary": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/pvp-summary?namespace=profile-us"
+  },
+  "encounters": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/encounters?namespace=profile-us"
+  },
+  "media": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/character-media?namespace=profile-us"
+  },
+  "last_login_timestamp": 1613611162000,
+  "average_item_level": 192,
+  "equipped_item_level": 192,
+  "specializations": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/specializations?namespace=profile-us"
+  },
+  "statistics": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/statistics?namespace=profile-us"
+  },
+  "mythic_keystone_profile": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/mythic-keystone-profile?namespace=profile-us"
+  },
+  "equipment": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/equipment?namespace=profile-us"
+  },
+  "appearance": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/appearance?namespace=profile-us"
+  },
+  "collections": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/collections?namespace=profile-us"
+  },
+  "reputations": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/reputations?namespace=profile-us"
+  },
+  "quests": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/quests?namespace=profile-us"
+  },
+  "achievements_statistics": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/achievements/statistics?namespace=profile-us"
+  },
+  "professions": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/professions?namespace=profile-us"
+  },
+  "covenant_progress": {
+    "chosen_covenant": {
+      "key": {
+        "href": "https://us.api.blizzard.com/data/wow/covenant/1?namespace=static-9.0.2_36532-us"
+      },
+      "name": "Kyrian",
+      "id": 1
+    },
+    "renown_level": 32,
+    "soulbinds": {
+      "href": "https://us.api.blizzard.com/profile/wow/character/azralon/johndoe/soulbinds?namespace=profile-us"
+    }
+  }
+}

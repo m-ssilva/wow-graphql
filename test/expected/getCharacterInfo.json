@@ -1,0 +1,45 @@
+{
+  "data": {
+    "getCharacterInfo": {
+      "profile": {
+        "name": "JohnDoe",
+        "gender": "Male",
+        "faction": "Horde",
+        "race": "Blood Elf",
+        "character_class": "Paladin",
+        "specialization": "Holy",
+        "guild": "A random guild",
+        "level": "60",
+        "item_level": "192",
+        "achievement_points": "13100",
+        "covenant": "Kyrian",
+        "covenant_renown": "32"
+      },
+      "media": {
+        "character_image_url": "https://render-us.worldofwarcraft.com/character/azralon/38/178631206-main.jpg"
+      },
+      "arena": {
+        "bracket": [
+          {
+            "type": "ARENA_2v2",
+            "rating": 1292,
+            "match_statistics": {
+              "played": 60,
+              "won": 36,
+              "win_rate": "60.00%"
+            }
+          },
+          {
+            "type": "ARENA_3v3",
+            "rating": 1128,
+            "match_statistics": {
+              "played": 29,
+              "won": 15,
+              "win_rate": "51.72%"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
