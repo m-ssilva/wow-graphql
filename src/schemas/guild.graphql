@@ -1,0 +1,11 @@
+type Guild {
+  id: Int!
+  name: String!
+  faction: String!
+  member_count: Int!
+  achievement_points: Int!
+}
+
+type Query {
+  getGuildInfo(region: Region!, realm: Realm!, guild_name: String!) : Guild
+}

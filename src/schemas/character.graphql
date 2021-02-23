@@ -13,7 +13,7 @@ type Profile {
   guild: String
   level: String!
   item_level: String!
-  achievement_points: String!
+  achievement_points: Int!
   covenant: String
   covenant_renown: String
 }
@@ -22,6 +22,7 @@ type CharacterInformation {
   profile: Profile
   media: Media
   arena: Arena
+  raiderIO: RaiderIO
 }
 
 type Query {

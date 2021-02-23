@@ -1,0 +1,11 @@
+type BestRuns {
+  dungeon: String!
+  mythic_level: Int!
+  score: Float!
+  url: String!
+}
+
+type RaiderIO {
+  highest_season_score: Float
+  best_runs: [BestRuns]!
+}
