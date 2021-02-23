@@ -1,11 +1,13 @@
-const { GraphQLError } = require('graphql')
-
 require('dotenv').config()
-
-const { ApolloServer } = require('apollo-server')
+const express = require('express')
+const { ApolloServer } = require('apollo-server-express')
 const { loadFiles } = require('graphql-import-files')
 const resolvers = require('./resolvers')
 const logging = require('./logging')
+const { GraphQLError } = require('graphql')
+
+const app = express()
+const path = '/graphql'
 
 const server = new ApolloServer({
   typeDefs: loadFiles('**/schemas/**/*.graphql'),
@@ -17,8 +19,7 @@ const server = new ApolloServer({
   plugins: [logging]
 })
 
-const port = process.env.PORT || 4000
+server.applyMiddleware({ app, path })
 
-server.listen(port).then(({ url }) => {
-  console.log(`Running at ${url}`)
-})
+module.exports = app
+
