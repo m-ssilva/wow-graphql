@@ -1,1 +1,1 @@
-# graphql-apollo
+# wow-graphql
