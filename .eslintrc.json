@@ -5,9 +5,6 @@
     "node": true,
     "jest": true
   },
-  "extends": [
-    "standard"
-  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -16,6 +13,9 @@
     "ecmaVersion": 2018
   },
   "rules": {
-    "space-before-function-paren": "error"
+    "space-before-function-paren": "error",
+    "no-unused-vars": "error",
+    "no-await-in-loop": "error",
+    "no-return-await": "error"
   }
 }
