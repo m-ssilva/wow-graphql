@@ -1,6 +1,8 @@
 type BestRuns {
   dungeon: String!
+  short_name: String!
   mythic_level: Int!
+  completed_within_time: Boolean!
   score: Float!
   url: String!
 }

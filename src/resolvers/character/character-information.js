@@ -99,7 +99,9 @@ const raiderIO = async ctx => {
     if (raiderIOProfile)
       return raiderIOProfile.mythic_plus_best_runs.map(run => ({
         dungeon: run.dungeon,
+        short_name: run.short_name,
         mythic_level: run.mythic_level,
+        completed_within_time: !!run.num_keystone_upgrades,
         score: run.score,
         url: run.url
       }))
