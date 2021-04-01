@@ -2,7 +2,6 @@ const axios = require('axios')
 const dayJS = require('dayjs')
 const { BLIZZARD } = require('../../../config')
 const { ApolloError } = require('apollo-server-express')
-const DataLoader = require('dataloader')
 
 let lastTokenRequest // { token: 'ABC123', expiresIn: 86399 }
 
